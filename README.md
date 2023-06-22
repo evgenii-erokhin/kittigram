@@ -3,11 +3,11 @@
 **Kittygram** -- веб сервис предназначеный для всех, кто любит котиков и  хочет поделиться фотографиями и достижениями своих питомцев с другими пользователями.
 
 ### Используемые технологии:
-![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-![image](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
-![image](https://img.shields.io/badge/django%20rest-ff1709?style=for-the-badge&logo=django&logoColor=white)
-![image](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)
-![image]()
+![image](https://www.vectorlogo.zone/logos/python/python-horizontal.svg)
+![image](https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg)
+<a href="https://www.django-rest-framework.org/" target="_blank"><img style="margin: 10px" src="https://www.django-rest-framework.org/img/logo.png" alt="Nginx" height="50" /></a>
+![image](https://www.vectorlogo.zone/logos/nginx/nginx-ar21.svg)
+![image](https://www.vectorlogo.zone/logos/gunicorn/gunicorn-icon.svg)
 ### Запуск проекта на удаленном сервере:
 1. Подключиться к удалённому серверу:
 ```
