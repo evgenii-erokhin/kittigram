@@ -82,7 +82,7 @@ sudo ufw enable
       ```
       sudo cp -r /home/<your_username>r/infra_sprint1/frontend/build/. /var/www/kittygramm/ 
       ```
-12. Описать настройки для работы со статикой фронтенд-приложения:
+12. Описать конфигурациооные настройки Nginx:
 ```
  sudo nano /etc/nginx/sites-enabled/default
 ```
@@ -109,7 +109,19 @@ server {
     }
 }
 ```
-   
-     
-   
-      
+13. Проверить файл конфигурации на ошибки:
+```
+sudo nginx -t 
+```
+14. Перезагрузить Nginx:
+```
+sudo systemctl reload nginx
+```  
+15. Собрать статику бекенда и перенести в директорию с которой работает Nginx:
+```
+python manage.py collectstatic
+```
+```
+sudo cp -r infra_sprint1/backend/static_backend/ /var/www/kittygram/
+```
+16. Создать директорию `media` в директории `/var/www/kittygramm/`для хранения пользовательских картинок
