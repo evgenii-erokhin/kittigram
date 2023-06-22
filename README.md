@@ -71,4 +71,45 @@ sudo ufw allow 'Nginx Full'
 sudo ufw allow OpenSSH
 sudo ufw enable
 ```
-11. 
+11. Собрать статику фронтенд-приложения и разместить её в той директории, которую Nginx использует по умолчанию для доступа к статическим файлам:
+    * Перейти в директорию `/infra_sprint1/frontend/` и выполнить команду:
+
+      ```
+      npm run build
+      ```
+    * Скопировать созданую папку в `/var/www/`
+
+      ```
+      sudo cp -r /home/<your_username>r/infra_sprint1/frontend/build/. /var/www/kittygramm/ 
+      ```
+12. Описать настройки для работы со статикой фронтенд-приложения:
+```
+ sudo nano /etc/nginx/sites-enabled/default
+```
+```
+server {
+    server_name 130.193.43.144 kittygramprojects.hopto.org;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8080;
+    }
+
+    location /media/ {
+        alias /var/www/kittygram/media/;
+    }
+
+    location / {
+        root   /var/www/kittygram;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+}
+```
+   
+     
+   
+      
