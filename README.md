@@ -15,7 +15,7 @@ $ ssh -i путь_до_файла_с_SSH_ключом/название_файл�
 ```
 2. Кланировать репозиторий:
 ```
-$ git clone git@github.com:******
+$ git clone git@github.com:evgenii-erokhin/infra_sprint1.git
 ```
 3. Создать и активировать виртуальное окружение:
 ```
@@ -25,11 +25,11 @@ $ source venv/bin/activate
 ```
 4. Установить зависимости:
 ```
-(venv) $ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 5. Выполнить миграции:
  ```
-(venv) $ python manage.py migrate
+python manage.py migrate
 ```
 6. Устанвоить Gunicorn:
  ```
