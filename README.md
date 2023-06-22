@@ -13,29 +13,29 @@
 ```
 $ ssh -i путь_до_файла_с_SSH_ключом/название_файла_с_SSH_ключом_без_расширения login@ip
 ```
-3. Кланировать репозиторий:
+2. Кланировать репозиторий:
 ```
 $ git clone git@github.com:******
 ```
-5. Создать и активировать виртуальное окружение:
+3. Создать и активировать виртуальное окружение:
 ```
 $ cd infra_sprint1/backend/
 $ python -m venv venv
 $ source venv/bin/activate
 ```
-5. Установить зависимости:
+4. Установить зависимости:
 ```
 (venv) $ pip install -r requirements.txt
 ```
-7. Выполнить миграции:
+5. Выполнить миграции:
  ```
 (venv) $ python manage.py migrate
 ```
-9. Устанвоить Gunicorn:
+6. Устанвоить Gunicorn:
  ```
 pip install gunicorn==20.1.0
 ```
-11. Создать юнит для Gunicorn:
+7. Создать юнит для Gunicorn:
 ```
 sudo nano /ect/systemd/system/gunicorn_kittygram.service
 ```
@@ -55,7 +55,20 @@ ExecStart=<директория-с-проектом>/<путь-до-gunicorn-в-
 [Install]
 WantedBy=multi-user.target
 ```
-12. Запустить созданый юнит:
+8. Запустить созданый юнит и добавить процесс Gunicorn в список автозапуска операционной системы на удалённом сервере:
 ```
-sudo systemctl start gunicorn_kittygram     
+sudo systemctl start gunicorn_kittygram
+sudo systemctl enable gunicorn   
 ```
+9. Установка и запуск Nginx:
+```
+sudo apt install nginx -y
+sudo systemctl start nginx
+```
+10. Настройка и запуск файрвола:
+```
+sudo ufw allow 'Nginx Full'
+sudo ufw allow OpenSSH
+sudo ufw enable
+```
+11. 
