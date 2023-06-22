@@ -69,7 +69,6 @@ server {
     } # managed by Certbot
 
 
-
     listen 80;
     server_name 130.193.43.144 kittygramprojects.hopto.org;
     return 404; # managed by Certbott
