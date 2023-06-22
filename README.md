@@ -125,3 +125,30 @@ python manage.py collectstatic
 sudo cp -r infra_sprint1/backend/static_backend/ /var/www/kittygram/
 ```
 16. Создать директорию `media` в директории `/var/www/kittygramm/`для хранения пользовательских картинок
+17. В директории `/infra_sprint1/backend/kittygram/backend/` создать `.env`  и поместить переменные окружения `SECRET_KEY` И `DEBUG` в формате `<КЛЮЧ: значение>`
+    
+18. Получить SSL сертификат:
+    + Установить пакетный менеджер snapd:
+      ```
+      sudo apt install snapd
+      ```
+    + Установить и обновить зависимости для пакетного менеджера snap:
+      ```
+      sudo snap install core; sudo snap refresh core  
+      ```
+    + Установить пакет certbot:
+      ```
+      sudo snap install --classic certbot
+      ```
+    + Создать ссылки на certbot в системной директории:
+      ```
+      sudo ln -s /snap/bin/certbot /usr/bin/certbot
+      ```
+    + Запустить certbot и получить SSL-сертификат:
+      ```
+      sudo certbot --nginx
+      ```
+    + Перезагрузить конфигурацию Nginx:
+      ```
+      sudo systemctl reload nginx
+      ```
