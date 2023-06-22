@@ -1,4 +1,4 @@
-# Учебный проект: разворачивание проекта на сервере -- Kittigram
+# Учебный проект: разворачивание проекта на сервере - Kittigram
 ### Описание:
 **Kittygram** -- веб сервис предназначеный для всех, кто любит котиков и  хочет поделиться фотографиями и достижениями своих питомцев с другими пользователями.
 
@@ -10,18 +10,32 @@
 ![image]()
 ### Запуск проекта на удаленном сервере:
 1. Подключиться к удалённому серверу:
-```$ ssh -i путь_до_файла_с_SSH_ключом/название_файла_с_SSH_ключом_без_расширения login@ip```
+```
+$ ssh -i путь_до_файла_с_SSH_ключом/название_файла_с_SSH_ключом_без_расширения login@ip
+```
 3. Кланировать репозиторий:
-```$ git clone git@github.com:******```
-4. Создать и активировать виртуальное окружение:
-```$ cd 06_Kittygram/backend/```
-```$ python -m venv venv```
-```$ source venv/bin/activate ```
+```
+$ git clone git@github.com:******
+```
+5. Создать и активировать виртуальное окружение:
+```
+$ cd 06_Kittygram/backend/
+$ python -m venv venv
+$ source venv/bin/activate
+```
 5. Установить зависимости:
-```(venv) $ pip install -r requirements.txt```
-6. Выполнить миграции:
- ```(venv) $ python manage.py migrate```
-7. Устанвоить Gunicorn:
- ```pip install gunicorn==20.1.0```
-8. Создать unit для Gunicorn:
-```sudo nano /ect/systemd/system/gunicorn_kittygram.service```
+```
+(venv) $ pip install -r requirements.txt
+```
+7. Выполнить миграции:
+ ```
+(venv) $ python manage.py migrate
+```
+9. Устанвоить Gunicorn:
+ ```
+pip install gunicorn==20.1.0
+```
+11. Создать unit для Gunicorn:
+```
+sudo nano /ect/systemd/system/gunicorn_kittygram.service
+```
