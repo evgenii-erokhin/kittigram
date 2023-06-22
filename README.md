@@ -19,7 +19,7 @@ $ git clone git@github.com:******
 ```
 5. Создать и активировать виртуальное окружение:
 ```
-$ cd 06_Kittygram/backend/
+$ cd infra_sprint1/backend/
 $ python -m venv venv
 $ source venv/bin/activate
 ```
