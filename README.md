@@ -35,7 +35,27 @@ $ source venv/bin/activate
  ```
 pip install gunicorn==20.1.0
 ```
-11. Создать unit для Gunicorn:
+11. Создать юнит для Gunicorn:
 ```
 sudo nano /ect/systemd/system/gunicorn_kittygram.service
+```
+Прописать:
+```
+[Unit]
+Description=<описание юнита>
+After=network.target 
+
+[Service]
+User=<Имя пользователя> 
+
+WorkingDirectory=<Путь к директории проекта>
+
+ExecStart=<директория-с-проектом>/<путь-до-gunicorn-в-виртуальном-окружении> --bind 0.0.0.0:8000 kyttygram_backend.wsgi
+
+[Install]
+WantedBy=multi-user.target
+```
+12. Запустить созданый юнит:
+```
+sudo systemctl start gunicorn_kittygram     
 ```
