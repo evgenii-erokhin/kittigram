@@ -1,5 +1,5 @@
 IP: 130.193.43.144;
-name_taski: https://myfirst-host.hopto.org/;
+name_taski: https://taskitaski-host.hopto.org/;
 name_kittygram: https://kittygramprojects.hopto.org/;
 login: adminadmin;
 password: 0112358As;
