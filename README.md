@@ -88,7 +88,7 @@ sudo ufw enable
 ```
 ```
 server {
-    server_name 130.193.43.144 kittygramprojects.hopto.org;
+    server_name ***.***.***.*** kittygramprojects.hopto.org;
 
     location /api/ {
         proxy_pass http://127.0.0.1:8080;
