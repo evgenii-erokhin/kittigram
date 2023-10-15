@@ -15,11 +15,11 @@ $ ssh -i путь_до_файла_с_SSH_ключом/название_файл�
 ```
 2. Кланировать репозиторий:
 ```
-$ git clone git@github.com:evgenii-erokhin/infra_sprint1.git
+$ git clone git@github.com:evgenii-erokhin/kittigram.git
 ```
 3. Создать и активировать виртуальное окружение:
 ```
-$ cd infra_sprint1/backend/
+$ cd kittigram/backend/
 $ python -m venv venv
 $ source venv/bin/activate
 ```
